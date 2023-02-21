@@ -485,7 +485,7 @@ configure:17317: $? = 0
 configure:17330: result: none needed
 configure:17345: checking for library containing yywrap
 configure:17374: g++ -o conftest -g -O2   conftest.cpp  >&5
-/usr/bin/ld: /tmp/ccTu0bdb.o: in function `main':
+/usr/bin/ld: /tmp/ccQ1lWO7.o: in function `main':
 /home/marisag/Documents/MySnaps/conquest/Conquest/conftest.cpp:31: undefined reference to `yywrap'
 collect2: error: ld returned 1 exit status
 configure:17374: $? = 1
@@ -1156,7 +1156,7 @@ configure:19587: $? = 0
 configure:19587: result: yes
 configure:19594: checking for getmsg
 configure:19594: g++ -o conftest -g -O2 -Wno-format-overflow -Wno-format-truncation -Wno-deprecated-declarations -fno-strict-aliasing   conftest.cpp -lz -lcurses -lm  -lcrypt >&5
-/usr/bin/ld: /tmp/ccLZk9DQ.o: in function `main':
+/usr/bin/ld: /tmp/cc1pYPM3.o: in function `main':
 /home/marisag/Documents/MySnaps/conquest/Conquest/conftest.cpp:84: undefined reference to `getmsg'
 collect2: error: ld returned 1 exit status
 configure:19594: $? = 1

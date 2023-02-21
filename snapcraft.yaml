@@ -12,7 +12,7 @@ title: Conquest
 
 apps:
   conquest:
-    command: bin/conquest
+    command: /conquest/bin/conquest
 parts:
   conquest:
     # See 'snapcraft plugins'
@@ -21,8 +21,8 @@ parts:
     build-packages: [libsdl2-dev, libsdl2-mixer-dev, ncurses-dev, freeglut3-dev, libxi-dev, libxmu-dev]
     stage-packages: [libsdl2-dev, libsdl2-mixer-dev, ncurses-dev, freeglut3-dev, libxi-dev, libxmu-dev]
     organize:
-      conquest: bin/
-      conquest.1: man/man1/
+      conquest: /conquest/bin/
+      conquest.1: /conquest/man/man1/
 
 architectures:
   - build-on: amd64
