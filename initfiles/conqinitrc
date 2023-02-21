@@ -1,0 +1,801 @@
+#
+#
+# Valid values for planets->ptype: 
+#     "M"               Class M (fuel)
+#     "D"               Class D (dead)
+#     "S"               Sun
+#     "m"               Moon
+#     "G"               Ghost
+#     "A"               Class A
+#     "O"               Class O
+#     "Z"               Class Z
+#
+#
+# Valid values for planets->pteam: 
+#     "F"               Federation
+#     "R"               Romulan
+#     "K"               Klingon
+#     "O"               Orion
+#     "S"               Self Ruled
+#     "N"               No Team (non)
+#     "G"               God
+#     "E"               Empire
+#
+# armies can be specified as a single or pair of numbers.
+#
+# armies 50             sets armies to 50
+# armies 20 100         set armies to random value between 20 and 100
+#
+# If the angle specified for a planet is negative, then a random angle
+# will be chosen
+#
+
+
+# Be careful changing values in the global section.  Changing any of
+# these values will require a new common block (Universe) to be
+# created and initialized via conqoper.  If you already have a common
+# block, and it's limits don't match the ones below, it will be
+# renamed and a new (uninitialized) one created in it's place.
+
+# Any planet sections specified in this file that exceeds maxplanets
+# will be ignored.  If the number of planet sections specified in this
+# file is less than maxplanets, invisible planets will be created to
+# fill the empty slots.
+
+# The current absolute maximum limit for each of the max values below
+# (except usermax) is 256.  usermax is limited to 65536.
+
+global {
+  planetmax 60
+  shipmax   20
+  usermax   500
+  histmax   40
+  msgmax    60
+}
+
+# The shiptype sections are currently ignored.
+shiptype {
+  name       "Scout"
+  engfac     1.200000
+  weafac     0.830000
+  accelfac   1.600000
+  torpwarp   14
+  warpmax    10
+  armymax    7
+  shmax      100
+  dammax     100
+  torpmax    9
+  fuelmax    999
+  size       210
+}
+
+shiptype {
+  name       "Destroyer"
+  engfac     1.000000
+  weafac     1.000000
+  accelfac   1.000000
+  torpwarp   12
+  warpmax    9
+  armymax    9
+  shmax      100
+  dammax     100
+  torpmax    9
+  fuelmax    999
+  size       225
+}
+
+shiptype {
+  name       "Cruiser"
+  engfac     0.800000
+  weafac     1.170000
+  accelfac   0.800000
+  torpwarp   10
+  warpmax    8
+  armymax    11
+  shmax      100
+  dammax     100
+  torpmax    9
+  fuelmax    999
+  size       240
+}
+
+# Planet definitions
+####################
+
+# List each team's primary homeplanet first.  This ensures that these
+# are the "primary" homeplanets for each team when entering the system
+# (course lock) and for robot defenders.  These are also the planets
+# needed to coup for each team.
+
+
+# primary home planet of the Federation
+planet {
+  name        "Earth"
+  primary     "Sol"
+  angle       276.138418
+  velocity    1.674012
+  radius      2600.000000
+  ptype       "M"
+  pteam       "F"
+  armies      50
+  visible     "yes"
+  core        "yes"
+  homeplanet  "yes"
+  x           8056.194584
+  y           -10363.267407
+  size        300
+}
+
+# primary home planet of the Romulan Star Empire
+planet {
+  name        "Romulus"
+  primary     "Sirius"
+  angle       27.638843
+  velocity    -4.787242
+  radius      2600.000000
+  ptype       "M"
+  pteam       "R"
+  armies      50
+  visible     "yes"
+  core        "yes"
+  homeplanet  "yes"
+  x           -5474.862444
+  y           -6572.043111
+  size        300
+}
+
+# primary home planet of the Klingon Empire
+planet {
+  name        "Klingus"
+  primary     "Kejela"
+  angle       136.215891
+  velocity    -7.284646
+  radius      2600.000000
+  ptype       "M"
+  pteam       "K"
+  armies      50
+  visible     "yes"
+  core        "yes"
+  homeplanet  "yes"
+  x           -9655.250220
+  y           9577.226313
+  size        300
+}
+
+# primary home planet of the Orions
+planet {
+  name        "Orion"
+  primary     "Betelgeuse"
+  angle       224.786417
+  velocity    -6.922314
+  radius      2600.000000
+  ptype       "M"
+  pteam       "O"
+  armies      50
+  visible     "yes"
+  core        "yes"
+  homeplanet  "yes"
+  x           5932.856423
+  y           5946.563049
+  size        300
+}
+
+# And the rest of the planets...
+
+planet {
+  name        "Remus"
+  primary     "Sirius"
+  angle       267.638843
+  velocity    -4.787242
+  radius      2600.000000
+  ptype       "D"
+  pteam       "R"
+  armies      50
+  visible     "yes"
+  core        "yes"
+  homeplanet  "yes"
+  x           -7885.290153
+  y           -10375.967171
+  size        300
+}
+
+planet {
+  name        "Leudus"
+  primary     "Kejela"
+  angle       16.215891
+  velocity    -7.284646
+  radius      2600.000000
+  ptype       "D"
+  pteam       "K"
+  armies      50
+  visible     "yes"
+  core        "yes"
+  homeplanet  "yes"
+  x           -5281.612289
+  y           8504.243904
+  size        300
+}
+
+planet {
+  name        "Oberon"
+  primary     "Betelgeuse"
+  angle       104.786417
+  velocity    -6.922314
+  radius      2600.000000
+  ptype       "D"
+  pteam       "O"
+  armies      50
+  visible     "yes"
+  core        "yes"
+  homeplanet  "yes"
+  x           7114.611550
+  y           10292.072780
+  size        300
+}
+
+planet {
+  name        "Telos"
+  primary     "Sol"
+  angle       156.138418
+  velocity    1.674012
+  radius      2600.000000
+  ptype       "D"
+  pteam       "F"
+  armies      50
+  visible     "yes"
+  core        "yes"
+  homeplanet  "yes"
+  x           5400.408553
+  y           -6726.400547
+  size        300
+}
+
+planet {
+  name        "Tarsus"
+  primary     "Kejela"
+  angle       256.215891
+  velocity    -7.284646
+  radius      2600.000000
+  ptype       "D"
+  pteam       "K"
+  armies      50
+  visible     "yes"
+  core        "yes"
+  homeplanet  "yes"
+  x           -8397.661277
+  y           5253.053554
+  size        600
+}
+
+planet {
+  name        "Umbriel"
+  primary     "Betelgeuse"
+  angle       344.786417
+  velocity    -6.922314
+  radius      2600.000000
+  ptype       "D"
+  pteam       "O"
+  armies      50
+  visible     "yes"
+  core        "yes"
+  homeplanet  "yes"
+  x           10287.055805
+  y           7095.887954
+  size        600
+}
+
+planet {
+  name        "Omega"
+  primary     "Sol"
+  angle       36.138418
+  velocity    1.674012
+  radius      2600.000000
+  ptype       "D"
+  pteam       "F"
+  armies      50
+  visible     "yes"
+  core        "yes"
+  homeplanet  "yes"
+  x           9877.920660
+  y           -6244.855809
+  size        300
+}
+
+planet {
+  name        "Rho"
+  primary     "Sirius"
+  angle       147.638843
+  velocity    -4.787242
+  radius      2600.000000
+  ptype       "D"
+  pteam       "R"
+  armies      50
+  visible     "yes"
+  core        "yes"
+  homeplanet  "yes"
+  x           -9974.371169
+  y           -6386.513510
+  size        600
+}
+
+planet {
+  name        "Janus"
+  primary     "Murisak"
+  angle       163.596033
+  velocity    -6.678935
+  radius      2600.000000
+  ptype       "M"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           -2494.165496
+  y           734.260497
+  size        300
+}
+
+planet {
+  name        "Elas"
+  primary     "Murisak"
+  angle       19.596033
+  velocity    -6.678935
+  radius      2600.000000
+  ptype       "M"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           2449.409765
+  y           872.004474
+  size        300
+}
+
+planet {
+  name        "Sherman"
+  primary     "Murisak"
+  angle       307.596033
+  velocity    -6.678935
+  radius      2600.000000
+  ptype       "M"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           1586.234782
+  y           -2060.062916
+  size        300
+}
+
+planet {
+  name        "Seritil"
+  primary     "Murisak"
+  angle       91.596033
+  velocity    -6.678935
+  radius      2600.000000
+  ptype       "D"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           -72.416294
+  y           2598.991320
+  size        300
+}
+
+planet {
+  name        "Cheron"
+  primary     "Murisak"
+  angle       235.596033
+  velocity    -6.678935
+  radius      2600.000000
+  ptype       "D"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           -1469.062755
+  y           -2145.193376
+  size        400
+}
+
+planet {
+  name        "Dakel"
+  primary     "Ghost 4"
+  angle       120.342209
+  velocity    -7.255418
+  radius      1150.000000
+  ptype       "M"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           -580.938063
+  y           -11007.522817
+  size        300
+}
+
+planet {
+  name        "Sarac"
+  primary     "Ghost 3"
+  angle       240.472292
+  velocity    2.067409
+  radius      1150.000000
+  ptype       "M"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           -12566.771058
+  y           -1000.635087
+  size        300
+}
+
+planet {
+  name        "Venar"
+  primary     "Ghost 2"
+  angle       315.472451
+  velocity    3.510056
+  radius      1150.000000
+  ptype       "M"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           819.850362
+  y           11193.560058
+  size        300
+}
+
+planet {
+  name        "Xidex"
+  primary     "Ghost 1"
+  angle       178.819811
+  velocity    -5.759416
+  radius      1150.000000
+  ptype       "M"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           10850.243955
+  y           23.686230
+  size        300
+}
+
+planet {
+  name        "Oldar"
+  primary     "Ghost 4"
+  angle       300.342209
+  velocity    -7.255418
+  radius      1150.000000
+  ptype       "D"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           580.938079
+  y           -12992.477182
+  size        300
+}
+
+planet {
+  name        "Eminiar"
+  primary     "Ghost 3"
+  angle       60.472292
+  velocity    2.067409
+  radius      1150.000000
+  ptype       "D"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           -11433.228942
+  y           1000.635077
+  size        600
+}
+
+planet {
+  name        "Dyneb"
+  primary     "Ghost 2"
+  angle       135.472451
+  velocity    3.510056
+  radius      1150.000000
+  ptype       "D"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           -819.850367
+  y           12806.439942
+  size        400
+}
+
+planet {
+  name        "RigelB"
+  primary     "Ghost 1"
+  angle       358.819811
+  velocity    -5.759416
+  radius      1150.000000
+  ptype       "D"
+  pteam       "S"
+  armies      25
+  visible     "yes"
+  core        "yes"
+  homeplanet  "no"
+  x           13149.756045
+  y           -23.686229
+  size        300
+}
+
+planet {
+  name        "Luna"
+  primary     "Earth"
+  angle       205.421047
+  velocity    20.088143
+  radius      1250.000000
+  ptype       "m"
+  pteam       "N"
+  armies      0
+  visible     "yes"
+  core        "no"
+  homeplanet  "no"
+  x           -1128.972084
+  y           -536.583669
+  size        160
+}
+
+planet {
+  name        "Altair"
+  primary     "Murisak"
+  angle       -1.0           # random
+  velocity    -23.100000
+  radius      6125.000000
+  ptype       "M"
+  pteam       "S"
+  armies      60 90
+  visible     "yes"
+  core        "no"
+  homeplanet  "no"
+  x           5974.991371
+  y           -1347.257629
+  size        300
+}
+
+planet {
+  name        "Hell"
+  primary     "Syrinx"
+  angle       64.393088
+  velocity    7.684620
+  radius      1900.000000
+  ptype       "D"
+  pteam       "S"
+  armies      74
+  visible     "yes"
+  core        "no"
+  homeplanet  "no"
+  x           -20039.724127
+  y           -7972.850339
+  size        300
+}
+
+planet {
+  name        "Jinx"
+  primary     "Syrinx"
+  angle       304.393088
+  velocity    7.500000
+  radius      2600.000000
+  ptype       "M"
+  pteam       "S"
+  armies      153
+  visible     "yes"
+  core        "no"
+  homeplanet  "no"
+  x           -19392.238383
+  y           -11831.705377
+  size        300
+}
+
+## Suns 
+
+planet {
+  name        "Sol"
+  primary     "Murisak"
+  angle       315.000000
+  velocity    0.000000
+  radius      11000.000000
+  ptype       "S"
+  pteam       "N"
+  armies      100 200 
+  visible     "yes"
+  core        "no"
+  homeplanet  "no"
+  x           7778.174599
+  y           -7778.174587
+  size        1500
+}
+
+planet {
+  name        "Sirius"
+  primary     "Murisak"
+  angle       225.000000
+  velocity    0.000000
+  radius      11000.000000
+  ptype       "S"
+  pteam       "N"
+  armies      100 200
+  visible     "yes"
+  core        "no"
+  homeplanet  "no"
+  x           -7778.174589
+  y           -7778.174597
+  size        1500
+}
+
+planet {
+  name        "Kejela"
+  primary     "Murisak"
+  angle       135.000000
+  velocity    0.000000
+  radius      11000.000000
+  ptype       "S"
+  pteam       "N"
+  armies      100 200
+  visible     "yes"
+  core        "no"
+  homeplanet  "no"
+  x           -7778.174595
+  y           7778.174591
+  size        1500
+}
+
+planet {
+  name        "Betelgeuse"
+  primary     "Murisak"
+  angle       45.000000
+  velocity    0.000000
+  radius      11000.000000
+  ptype       "S"
+  pteam       "N"
+  armies      100 200
+  visible     "yes"
+  core        "no"
+  homeplanet  "no"
+  x           7778.174592
+  y           7778.174594
+  size        1500
+}
+
+planet {
+  # Murisak orbits itself (stationary)
+  name        "Murisak"
+  primary     "Murisak"
+  angle       0.000000
+  velocity    0.000000
+  radius      0.000000
+  ptype       "S"
+  pteam       "N"
+  armies      100 200
+  visible     "yes"
+  core        "no"
+  homeplanet  "no"
+  x           0.000000
+  y           0.000000
+  size        1500
+}
+
+planet {
+  name        "Syrinx"
+  primary     "Murisak"
+  angle       -1		# random
+  velocity    -6.314179
+  radius      23000.000000
+  ptype       "S"
+  pteam       "N"
+  armies      100 200
+  visible     "yes"
+  core        "no"
+  homeplanet  "no"
+  x           18655.801085
+  y           13452.177738
+  size        1500
+}
+
+## others
+
+planet {
+  name        "Ghost 1"
+  primary     "Murisak"
+  angle       0.000000
+  velocity    0.000000
+  radius      12000.000000
+  ptype       "G"
+  pteam       "N"
+  armies      0
+  visible     "no"
+  core        "no"
+  homeplanet  "no"
+  x           12000.000000
+  y           0.000000
+  size        300
+}
+
+planet {
+  name        "Ghost 2"
+  primary     "Murisak"
+  angle       90.000000
+  velocity    0.000000
+  radius      12000.000000
+  ptype       "G"
+  pteam       "N"
+  armies      0
+  visible     "no"
+  core        "no"
+  homeplanet  "no"
+  x           -0.000002
+  y           12000.000000
+  size        300
+}
+
+planet {
+  name        "Ghost 3"
+  primary     "Murisak"
+  angle       180.000000
+  velocity    0.000000
+  radius      12000.000000
+  ptype       "G"
+  pteam       "N"
+  armies      0
+  visible     "no"
+  core        "no"
+  homeplanet  "no"
+  x           -12000.000000
+  y           -0.000005
+  size        300
+}
+
+planet {
+  name        "Ghost 4"
+  primary     "Murisak"
+  angle       270.000000
+  velocity    0.000000
+  radius      12000.000000
+  ptype       "G"
+  pteam       "N"
+  armies      0
+  visible     "no"
+  core        "no"
+  homeplanet  "no"
+  x           0.000007
+  y           -12000.000000
+  size        300
+}
+
+planet {
+  name        "Ghost 5"
+  primary     "Murisak"
+  angle       0.000000
+  velocity    0.000000
+  radius      12000.000000
+  ptype       "G"
+  pteam       "N"
+  armies      0
+  visible     "no"
+  core        "no"
+  homeplanet  "no"
+  x           12000.000000
+  y           0.000000
+  size        300
+}
+

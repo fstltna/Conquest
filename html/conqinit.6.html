@@ -1,0 +1,146 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of conqinit</TITLE>
+</HEAD><BODY>
+<H1>conqinit</H1>
+Section: Games and Demos (6)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+conqinit - a utility for the Conquest Init parser (CQI)
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>conqinit</B> [OPTIONS]
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+<B>conqinit</B> can be used to test the parser, perform syntax checking
+on conqinitrc, soundrc, and texturesrc files.
+<P>
+
+CQI is a lex/yacc parser that is used by <B>Conquest</B> 8.1.2a or
+later for configuration of the planets and other general purpose data,
+and for the specification of colors, textures, animation definitions,
+sound, and music.
+<P>
+
+If you are modifying one of the CQI config files, (conqinitrc,
+soundrc, etc), you should at least run conqinit on them to check for
+syntax or other validation errors.  If conquest (or conquestd) fails
+to properly load and parse these files they will fail to start.
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<P>
+
+<DL COMPACT>
+<DT><B>-G &lt;subdir&gt;</B>
+
+<DD>
+Specify a game subdirectory.  See docs/server-guide.md for information
+on serving multiple games from a single conquest installation.
+<DT><B>-f &lt;file&gt;</B>
+
+<DD>
+Read data from file &lt;file&gt;.
+<DT><B>-v </B>
+
+<DD>
+Increase verbosity.  Specifying this option multiple times will
+further increase the verbosity level.
+<DT><B>-s </B>
+
+<DD>
+Treat the input file as a file in soundrc format.  The default is
+to treat the file as if it were in conqinitrc format.
+<DT><B>-t </B>
+
+<DD>
+Treat the input file as a file in texturesrc format.  The default is
+to treat the file as if it were in conqinitrc format.
+<DT><B>-D</B>
+
+<DD>
+Dump the current universe to stdout in conqinitrc format.
+</DL>
+<P>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;option&nbsp;is&nbsp;sort&nbsp;of&nbsp;a&nbsp;hack.&nbsp;&nbsp;It&nbsp;loads&nbsp;the&nbsp;current&nbsp;state&nbsp;of
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;universe&nbsp;on&nbsp;the&nbsp;local&nbsp;machine&nbsp;and&nbsp;generates&nbsp;a&nbsp;conqinitrc
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format&nbsp;file&nbsp;on&nbsp;stdout.&nbsp;&nbsp;This&nbsp;file&nbsp;can&nbsp;be&nbsp;saved&nbsp;and&nbsp;made&nbsp;the
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default&nbsp;conqinitrc&nbsp;for&nbsp;a&nbsp;system.
+<P>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;you&nbsp;do&nbsp;this,&nbsp;you&nbsp;will&nbsp;almost&nbsp;certainly&nbsp;want&nbsp;to&nbsp;edit&nbsp;the
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generated&nbsp;file&nbsp;and&nbsp;at&nbsp;least&nbsp;change&nbsp;the&nbsp;colors&nbsp;of&nbsp;the&nbsp;suns,&nbsp;and
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;sun's&nbsp;randomized&nbsp;army&nbsp;counts.&nbsp;&nbsp;Since&nbsp;this&nbsp;data&nbsp;is&nbsp;not
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currently&nbsp;stored&nbsp;in&nbsp;the&nbsp;common&nbsp;block,&nbsp;conqinit&nbsp;tries&nbsp;to&nbsp;choose
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reasonable&nbsp;defaults&nbsp;for&nbsp;them.&nbsp;&nbsp;Make&nbsp;sure&nbsp;it&nbsp;actually&nbsp;did&nbsp;:)
+<P>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;capability&nbsp;is&nbsp;useful&nbsp;if&nbsp;you&nbsp;init&nbsp;the&nbsp;universe,&nbsp;then&nbsp;use
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conqoper&nbsp;to&nbsp;edit&nbsp;and&nbsp;or&nbsp;create&nbsp;new&nbsp;planets&nbsp;and&nbsp;arrange&nbsp;them
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;just&nbsp;like&nbsp;you&nbsp;want&nbsp;them.&nbsp;&nbsp;Then,&nbsp;using&nbsp;the&nbsp;above&nbsp;command,&nbsp;dump
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;universe&nbsp;to&nbsp;a&nbsp;conqinitrc&nbsp;file,&nbsp;edit&nbsp;it&nbsp;if&nbsp;neccessary&nbsp;(to
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clean&nbsp;up&nbsp;colors,&nbsp;etc).&nbsp;&nbsp;
+<P>
+
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then&nbsp;copy&nbsp;that&nbsp;file&nbsp;to&nbsp;conqinitrc.local&nbsp;in&nbsp;the&nbsp;conquest
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;etc/conquest/&nbsp;directory,&nbsp;(or&nbsp;email&nbsp;it&nbsp;to&nbsp;your&nbsp;friends&nbsp;:).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From&nbsp;then&nbsp;on,&nbsp;whenever&nbsp;the&nbsp;planets&nbsp;are&nbsp;initialized&nbsp;(due&nbsp;to&nbsp;a
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;successful&nbsp;conquer,&nbsp;or&nbsp;the&nbsp;actions&nbsp;of&nbsp;an&nbsp;oper&nbsp;in&nbsp;conqoper),
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;your&nbsp;definitions&nbsp;will&nbsp;be&nbsp;used&nbsp;as&nbsp;the&nbsp;default&nbsp;planet
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;configuration.
+<P>
+<A NAME="lbAF">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Jon Trulson
+<A NAME="lbAG">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<A HREF="../conquest/conquestd.6.html">conquestd</A>(6), <A HREF="../conquest/conqoper.6.html">conqoper</A>(6), <A HREF="../conquest/conqdriv.6.html">conqdriv</A>(6), <A HREF="../conquest/conqmetad.6.html">conqmetad</A>(6) 
+<P>
+
+See the docs/conqinit.txt file in the src distribution (or on the conquest
+web page) for detailed information on the syntax of the files parsed
+by <B>conqinit</B>, as well as other information not mentioned here.
+<A NAME="lbAH">&nbsp;</A>
+<H2>COPYRIGHT</H2>
+
+<P>
+
+Copyright (C)1994-2019 by Jon Trulson &lt;<A HREF="mailto:jon@radscan.com">jon@radscan.com</A>&gt; under the MIT
+License.
+<P>
+<P>
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">AUTHOR</A><DD>
+<DT><A HREF="#lbAG">SEE ALSO</A><DD>
+<DT><A HREF="#lbAH">COPYRIGHT</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 20:03:05 GMT, January 10, 2019
+</BODY>
+</HTML>

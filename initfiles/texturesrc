@@ -1,0 +1,2337 @@
+# Texture defs...
+#
+# Order is important here, as some textures may need to reference
+# previously defined textures.
+#
+
+# your basic star (default)
+
+texture {
+  name         "star"
+
+  color        "ffff9933"
+  mipmap       "yes"
+
+  prescale     1.7
+}
+
+# Some random planets and moons from the Sol system
+
+texture {
+  name         "venus"
+
+  color        "ffe6e6e6"
+  mipmap       "yes"
+
+  prescale     1.25
+}
+
+texture {
+  name         "venus2"
+
+  color        "ffe6e6e6"
+  mipmap       "yes"
+
+  prescale     1.2
+}
+
+texture {
+  name         "earth"
+
+  color        "ffe6e6e6"
+  mipmap       "yes"
+
+  prescale     1.3
+}
+
+texture {
+  name         "luna"
+
+  color        "ffe6e6e6"
+  mipmap       "yes"
+
+  prescale     1.1
+}
+
+texture {
+  name         "mars"
+
+  color        "ffe6e6e6"
+  mipmap       "yes"
+
+  prescale     1.2
+}
+
+texture {
+  name         "jupiter"
+
+  color        "ffe6e6e6"
+  mipmap       "yes"
+}
+
+texture {
+  name         "io"
+
+  color        "ffe6e6e6"
+  mipmap       "yes"
+
+  prescale     1.1
+}
+
+texture {
+  name         "uranus"
+
+  color        "ffe6e6e6"
+  mipmap       "yes"
+
+  prescale     2.0
+}
+
+texture {
+  name         "neptune"
+
+  color        "ffe6e6e6"
+  mipmap       "yes"
+}
+
+texture {
+  name         "pluto"
+
+  color        "ffe6e6e6"
+  mipmap       "yes"
+
+  prescale     1.1
+}
+
+# Some extra class M textures
+
+texture {
+  name         "habitable1"
+
+  color        "ffe6e6e6"
+  mipmap       "yes"
+
+  prescale     1.3
+}
+
+texture {
+  name         "habitable2"
+
+  # make a touch bluer
+  color        "ffe6e6f6"
+  mipmap       "yes"
+
+  prescale     1.15
+}
+
+
+# generic planets by class
+
+texture {
+  name         "classm"
+  # use the earth texture for this
+  filename     "@earth"
+}
+
+texture {
+  name         "classd"
+  filename     "@mars"
+}
+
+texture {
+    name        "classa"
+    filename    "@neptune"
+}
+
+texture {
+    name        "classo"
+    filename    "@jupiter"
+}
+
+texture {
+    name        "classz"
+    filename    "@pluto"
+}
+
+
+texture {
+  name         "doomsday"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.3
+}
+
+texture {
+  name         "doombeam"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.3
+}
+
+texture {
+  name         "vbg"
+
+  color        "ffe6e6e6"
+# uncomment below for a sparser vbg
+# filename     "TOS-vbg"
+}
+
+texture {
+  name         "torp"
+
+  color        "ffe6e6e6"
+}
+
+texture {
+  name         "barrier"
+  color        "bfc3baba"
+}
+
+# animdef explosion texanim textures
+# Say that 3 times fast.
+#
+####################################
+
+texture {
+  name         "exp0"
+  color        "ffffffff"
+}
+
+texture {
+  name         "exp1"
+  color        "ffffffff"
+}
+
+texture {
+  name         "exp2"
+  color        "ffffffff"
+}
+
+texture {
+  name         "exp3"
+  color        "ffffffff"
+}
+
+texture {
+  name         "exp4"
+  color        "ffffb3cc"
+}
+
+texture {
+  name         "exp5"
+  color        "ffffb3b3"
+}
+
+texture {
+  name         "exp6"
+  color        "ffff9980"
+}
+
+texture {
+  name         "exp7"
+  color        "ffff9970"
+}
+
+texture {
+  name         "exp8"
+  color        "ffff8066"
+}
+
+texture {
+  name         "exp9"
+  color        "ffff804c"
+}
+
+texture {
+  name         "exp10"
+  color        "ffff8040"
+}
+
+texture {
+  name         "exp11"
+  color        "ffff8033"
+}
+
+texture {
+  name         "exp12"
+  color        "ffff8019"
+}
+
+texture {
+  name         "exp13"
+  color        "ffff8010"
+}
+
+texture {
+  name         "exp14"
+  color        "ffff8005"
+}
+
+texture {
+  name         "exp15"
+  color        "ffff8002"
+}
+
+# Colors for the circular tactical grid
+#
+#######################################
+
+# red alert/phaser range, 1000 CU's
+texture {
+  name         "tac-ring1k"
+  filename     ""  # storing a color only
+
+  color        "ff4c0000"
+}
+
+# yellow, 2000 CU's
+texture {
+  name         "tac-ring2k"
+  filename     ""  # storing a color only
+
+  color        "ff4c4c00"
+}
+
+# green, 3000 CU's
+texture {
+  name         "tac-ring3k"
+  filename     ""  # storing a color only
+
+  color        "ff004c00"
+}
+
+# grey - rings 4-9 (4-9 CU's)
+texture {
+  name         "tac-ringxk"
+  filename     ""  # storing a color only
+
+  color        "ff333333"
+}
+
+# cyan, last ring 10K CU's
+texture {
+  name         "tac-ring10k"
+  filename     ""  # storing a color only
+
+  color        "ff004c4c"
+}
+
+# team specific logos
+#
+#####################
+
+texture {
+  name         "conqlogoF"
+  filename     "conq-fed"
+  color        "ffe6e6e6"
+}
+
+texture {
+  name         "conqlogoR"
+  filename     "conq-rom"
+  color        "ffe6e6e6"
+}
+
+texture {
+  name         "conqlogoK"
+  filename     "conq-kli"
+  color        "ffe6e6e6"
+}
+
+texture {
+  name         "conqlogoO"
+  filename     "conq-ori"
+  color        "ffe6e6e6"
+}
+
+
+# Federation ships
+#
+##################
+
+# scout
+texture {
+  name         "shipFSc"
+  filename     "TOSfsc"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.2
+}
+
+# scout shield
+texture {
+  name         "shipFSc-sh"
+  filename     "TOSfsc-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+  mipmap       "yes"
+}
+
+texture {
+  name         "shipFDe"
+  filename     "TOSfde"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.3
+}
+
+texture {
+  name         "shipFDe-sh"
+  filename     "TOSfde-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+  mipmap       "yes"
+}
+
+texture {
+  name         "shipFCr"
+  filename     "TOSfcr"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.5
+}
+
+texture {
+  name         "shipFCr-sh"
+  filename     "TOSfcr-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+  mipmap       "yes"
+}
+
+texture {
+  name         "shipF-phaser"
+  filename     "TOS-fph"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipF-torp0"
+  filename     "TOS-ftorp1"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipF-torp1"
+  filename     "TOS-ftorp2"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipF-torp2"
+  filename     "TOS-ftorp3"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipFSc-ico"
+  filename     "TOSfsc"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipFDe-ico"
+  filename     "TOSfde"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipFCr-ico"
+  filename     "TOSfcr"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipFSc-ico-sh"
+  filename     "TOS-fish_s"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipFDe-ico-sh"
+  filename     "TOS-fish"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipFCr-ico-sh"
+  filename     "TOS-fish_c"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+# team's ico-torp texture
+texture {
+  name         "shipF-ico-torp"
+  filename     "TOS-ftorp1"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipF-ico-decal1"
+  filename     "hud-decal1"
+
+  color        "ffffffff"
+
+  # shield gauge location
+  texarea {
+    name       "shieldg"
+    x          77.0
+    y          20.0
+    w          121.0
+    h          9.0
+  }
+
+  # shield charge gauge location
+  texarea {
+    name       "shchargeg"
+    x          77.0
+    y          50.0
+    w          121.0
+    h          2.0
+  }
+
+  # shield value (number) location
+  texarea {
+    name       "shieldn"
+    x          208.0
+    y          18.0
+    w          38.0
+    h          30.0
+  }
+
+  # damage gauge location
+  texarea {
+    name       "damageg"
+    x          77.0
+    y          221.0
+    w          121.0
+    h          9.0
+  }
+
+  # damage value (number) location
+  texarea {
+    name       "damagen"
+    x          208.0
+    y          215.0
+    w          38.0
+    h          30.0
+  }
+
+  # iconic ship location
+  texarea {
+    name       "icon"
+    x          72.0
+    y          66.0
+    w          124.0
+    h          124.0
+  }
+
+  ## "FA:%d" firing angle indicator position within "icon" area
+  texarea {
+    name       "icon-fangle"
+    x          7.0
+    y          56.0
+    w          40.0
+    h          10.0
+  }
+
+  ## "TA/D: %s:%d/%d" last Target, target Angle and target Distance
+  ##  indicator position within "icon" area
+  texarea {
+    name       "icon-tad"
+    x          60.0
+    y          56.0
+    w          132.0
+    h          10.0
+  }
+
+  # torp status
+  texarea {
+    name       "torps"
+    x          204.0
+    y          61.0
+    w          19.0
+    h          144.0
+  }
+
+  # phaser charge
+  texarea {
+    name       "phaserchrg"
+    x          234.0
+    y          61.0
+    w          10.0
+    h          144.0
+  }
+}
+
+# Alert lamps overlayed on decal1
+texture {
+  name         "shipF-ico-decal1-lamp-sh"
+  filename     "hud-decal1-lamp-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipF-ico-decal1-lamp-hull"
+  filename     "hud-decal1-lamp-hull"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipF-ico-decal1-lamp-fuel"
+  filename     "hud-decal1-lamp-fuel"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipF-ico-decal1-lamp-eng"
+  filename     "hud-decal1-lamp-eng"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipF-ico-decal1-lamp-wep"
+  filename     "hud-decal1-lamp-wep"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipF-ico-decal1-lamp-rep"
+  filename     "hud-decal1-lamp-rep"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipF-ico-decal1-lamp-cloak"
+  filename     "hud-decal1-lamp-cloak"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipF-ico-decal1-lamp-tow"
+  filename     "hud-decal1-lamp-tow"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipF-ico-decal2"
+  filename     "hud-decal2"
+
+  color        "ffffffff"
+
+  # fuel gauge location
+  texarea {
+    name       "fuelg"
+    x          77.0
+    y          22.0
+    w          121.0
+    h          9.0
+  }
+
+  # fuel gauge number
+  texarea {
+    name       "fueln"
+    x          209.0
+    y          14.0
+    w          37.0
+    h          26.0
+  }
+
+  # etemp gauge location
+  texarea {
+    name       "etempg"
+    x          77.0
+    y          74.0
+    w          121.0
+    h          8.0
+  }
+
+  # etemp gauge number
+  texarea {
+    name       "etempn"
+    x          209.0
+    y          66.0
+    w          37.0
+    h          26.0
+  }
+
+  # wtemp gauge location
+  texarea {
+    name       "wtempg"
+    x          77.0
+    y          127.0
+    w          121.0
+    h          8.0
+  }
+
+  # wtemp gauge number
+  texarea {
+    name       "wtempn"
+    x          209.0
+    y          120.0
+    w          37.0
+    h          26.0
+  }
+
+  # alloc gauge location
+  texarea {
+    name       "allocg"
+    x          40.0
+    y          183.0
+    w          121.0
+    h          9.0
+  }
+
+  # alloc gauge number
+  texarea {
+    name       "allocn"
+    x          209.0
+    y          170.0
+    w          37.0
+    h          25.0
+  }
+
+  # kills number
+  texarea {
+    name       "killsbox"
+    x          192.0
+    y          215.0
+    w          50.0
+    h          16.0
+  }
+}
+
+texture {
+  name         "shipF-dial"
+  filename     "TOS-fihd"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipF-dialp"
+  filename     "TOS-fihp"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipF-warp"
+  filename     "TOS-fwarp"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipF-warp2"
+  filename     "TOS-fwarp2"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipF-warp-col"
+  filename     ""  # we are only using this to store a color
+
+  color        "ffd72d00"
+}
+
+# Romulan Ships
+#
+################
+
+texture {
+  name         "shipRSc"
+  filename     "TOSrsc"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.0
+}
+
+texture {
+  name         "shipRSc-sh"
+  filename     "TOSrsc-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+  mipmap       "yes"
+}
+
+texture {
+  name         "shipRDe"
+  filename     "TOSrde"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.3
+}
+
+texture {
+  name         "shipRDe-sh"
+  filename     "TOSrde-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+  mipmap       "yes"
+}
+
+texture {
+  name         "shipRCr"
+  filename     "TOSrcr"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.5
+}
+
+texture {
+  name         "shipRCr-sh"
+  filename     "TOSrcr-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+  mipmap       "yes"
+}
+
+texture {
+  name         "shipR-phaser"
+  filename     "TOS-rph"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipR-torp0"
+  filename     "TOS-rtorp1"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipR-torp1"
+  filename     "TOS-rtorp3"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipR-torp2"
+  filename     "TOS-rtorp3"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipRSc-ico"
+  filename     "TOSrsc"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipRDe-ico"
+  filename     "TOSrde"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipRCr-ico"
+  filename     "TOSrcr"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipRSc-ico-sh"
+  filename     "TOS-rish_s"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipRDe-ico-sh"
+  filename     "TOS-rish"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipRCr-ico-sh"
+  filename     "TOS-rish_c"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+# team's ico-torp texture
+texture {
+  name         "shipR-ico-torp"
+  filename     "TOS-rtorp1"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipR-ico-decal1"
+  filename     "hud-decal1"
+
+  color        "ffffffff"
+
+  # shield gauge location
+  texarea {
+    name       "shieldg"
+    x          77.0
+    y          20.0
+    w          121.0
+    h          9.0
+  }
+
+  # shield charge gauge location
+  texarea {
+    name       "shchargeg"
+    x          77.0
+    y          50.0
+    w          121.0
+    h          2.0
+  }
+
+  # shield value (number) location
+  texarea {
+    name       "shieldn"
+    x          208.0
+    y          18.0
+    w          38.0
+    h          30.0
+  }
+
+  # damage gauge location
+  texarea {
+    name       "damageg"
+    x          77.0
+    y          221.0
+    w          121.0
+    h          9.0
+  }
+
+  # damage value (number) location
+  texarea {
+    name       "damagen"
+    x          208.0
+    y          215.0
+    w          38.0
+    h          30.0
+  }
+
+  # iconic ship location
+  texarea {
+    name       "icon"
+    x          72.0
+    y          66.0
+    w          124.0
+    h          124.0
+  }
+
+  ## "FA:%d" firing angle indicator position within "icon" area
+  texarea {
+    name       "icon-fangle"
+    x          7.0
+    y          56.0
+    w          40.0
+    h          10.0
+  }
+
+  ## "TA/D: %s:%d/%d" last Target, target Angle and target Distance
+  ##  indicator position within "icon" area
+  texarea {
+    name       "icon-tad"
+    x          60.0
+    y          56.0
+    w          132.0
+    h          10.0
+  }
+
+  # torp status
+  texarea {
+    name       "torps"
+    x          204.0
+    y          61.0
+    w          19.0
+    h          144.0
+  }
+
+  # phaser charge
+  texarea {
+    name       "phaserchrg"
+    x          234.0
+    y          61.0
+    w          10.0
+    h          144.0
+  }
+}
+
+# Alert lamps overlayed on decal1
+texture {
+  name         "shipR-ico-decal1-lamp-sh"
+  filename     "hud-decal1-lamp-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipR-ico-decal1-lamp-hull"
+  filename     "hud-decal1-lamp-hull"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipR-ico-decal1-lamp-fuel"
+  filename     "hud-decal1-lamp-fuel"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipR-ico-decal1-lamp-eng"
+  filename     "hud-decal1-lamp-eng"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipR-ico-decal1-lamp-wep"
+  filename     "hud-decal1-lamp-wep"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipR-ico-decal1-lamp-rep"
+  filename     "hud-decal1-lamp-rep"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipR-ico-decal1-lamp-cloak"
+  filename     "hud-decal1-lamp-cloak"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipR-ico-decal1-lamp-tow"
+  filename     "hud-decal1-lamp-tow"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipR-ico-decal2"
+  filename     "hud-decal2"
+
+  color        "ffffffff"
+
+  # fuel gauge location
+  texarea {
+    name       "fuelg"
+    x          77.0
+    y          22.0
+    w          121.0
+    h          9.0
+  }
+
+  # fuel gauge number
+  texarea {
+    name       "fueln"
+    x          209.0
+    y          14.0
+    w          37.0
+    h          26.0
+  }
+
+  # etemp gauge location
+  texarea {
+    name       "etempg"
+    x          77.0
+    y          74.0
+    w          121.0
+    h          8.0
+  }
+
+  # etemp gauge number
+  texarea {
+    name       "etempn"
+    x          209.0
+    y          66.0
+    w          37.0
+    h          26.0
+  }
+
+  # wtemp gauge location
+  texarea {
+    name       "wtempg"
+    x          77.0
+    y          127.0
+    w          121.0
+    h          8.0
+  }
+
+  # wtemp gauge number
+  texarea {
+    name       "wtempn"
+    x          209.0
+    y          120.0
+    w          37.0
+    h          26.0
+  }
+
+  # alloc gauge location
+  texarea {
+    name       "allocg"
+    x          40.0
+    y          183.0
+    w          121.0
+    h          9.0
+  }
+
+  # alloc gauge number
+  texarea {
+    name       "allocn"
+    x          209.0
+    y          170.0
+    w          37.0
+    h          25.0
+  }
+
+  # kills number
+  texarea {
+    name       "killsbox"
+    x          192.0
+    y          215.0
+    w          50.0
+    h          16.0
+  }
+}
+
+texture {
+  name         "shipR-dial"
+  filename     "TOS-rihd"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipR-dialp"
+  filename     "TOS-rihp"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipR-warp"
+  filename     "TOS-rwarp"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipR-warp2"
+  filename     "TOS-rwarp2"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipR-warp-col"
+  filename     ""  # we are only using this to store a color
+
+  color        "ff47b6a4"
+}
+
+
+# Klingon ships
+#
+###############
+
+texture {
+  name         "shipKSc"
+  filename     "TOSksc"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.2
+}
+
+texture {
+  name         "shipKSc-sh"
+  filename     "TOSksc-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+  mipmap       "yes"
+}
+
+texture {
+  name         "shipKDe"
+  filename     "TOSkde"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.3
+}
+
+texture {
+  name         "shipKDe-sh"
+  filename     "TOSkde-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+  mipmap       "yes"
+}
+
+texture {
+y  name         "shipKCr"
+  filename     "TOSkcr"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.5
+}
+
+texture {
+  name         "shipKCr-sh"
+  filename     "TOSkcr-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+  mipmap       "yes"
+}
+
+texture {
+  name         "shipK-phaser"
+  filename     "TOS-kph"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipK-torp0"
+  filename     "TOS-ktorp1"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipK-torp1"
+  filename     "TOS-ktorp2"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipK-torp2"
+  filename     "TOS-ktorp3"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipKSc-ico"
+  filename     "TOSksc"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipKDe-ico"
+  filename     "TOSkde"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipKCr-ico"
+  filename     "TOSkcr"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipKSc-ico-sh"
+  filename     "TOS-kish_s"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipKDe-ico-sh"
+  filename     "TOS-kish"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipKCr-ico-sh"
+  filename     "TOS-kish_c"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+# team's ico-torp texture
+texture {
+  name         "shipK-ico-torp"
+  filename     "TOS-ktorp1"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipK-ico-decal1"
+  filename     "hud-decal1"
+
+  color        "ffffffff"
+
+  # shield gauge location
+  texarea {
+    name       "shieldg"
+    x          77.0
+    y          20.0
+    w          121.0
+    h          9.0
+  }
+
+  # shield charge gauge location
+  texarea {
+    name       "shchargeg"
+    x          77.0
+    y          50.0
+    w          121.0
+    h          2.0
+  }
+
+  # shield value (number) location
+  texarea {
+    name       "shieldn"
+    x          208.0
+    y          18.0
+    w          38.0
+    h          30.0
+  }
+
+  # damage gauge location
+  texarea {
+    name       "damageg"
+    x          77.0
+    y          221.0
+    w          121.0
+    h          9.0
+  }
+
+  # damage value (number) location
+  texarea {
+    name       "damagen"
+    x          208.0
+    y          215.0
+    w          38.0
+    h          30.0
+  }
+
+  # iconic ship location
+  texarea {
+    name       "icon"
+    x          72.0
+    y          66.0
+    w          124.0
+    h          124.0
+  }
+
+  ## "FA:%d" firing angle indicator position within "icon" area
+  texarea {
+    name       "icon-fangle"
+    x          7.0
+    y          56.0
+    w          40.0
+    h          10.0
+  }
+
+  ## "TA/D: %s:%d/%d" last Target, target Angle and target Distance
+  ##  indicator position within "icon" area
+  texarea {
+    name       "icon-tad"
+    x          60.0
+    y          56.0
+    w          132.0
+    h          10.0
+  }
+
+  # torp status
+  texarea {
+    name       "torps"
+    x          204.0
+    y          61.0
+    w          19.0
+    h          144.0
+  }
+
+  # phaser charge
+  texarea {
+    name       "phaserchrg"
+    x          234.0
+    y          61.0
+    w          10.0
+    h          144.0
+  }
+}
+
+# Alert lamps overlayed on decal1
+texture {
+  name         "shipK-ico-decal1-lamp-sh"
+  filename     "hud-decal1-lamp-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipK-ico-decal1-lamp-hull"
+  filename     "hud-decal1-lamp-hull"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipK-ico-decal1-lamp-fuel"
+  filename     "hud-decal1-lamp-fuel"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipK-ico-decal1-lamp-eng"
+  filename     "hud-decal1-lamp-eng"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipK-ico-decal1-lamp-wep"
+  filename     "hud-decal1-lamp-wep"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipK-ico-decal1-lamp-rep"
+  filename     "hud-decal1-lamp-rep"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipK-ico-decal1-lamp-cloak"
+  filename     "hud-decal1-lamp-cloak"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipK-ico-decal1-lamp-tow"
+  filename     "hud-decal1-lamp-tow"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipK-ico-decal2"
+  filename     "hud-decal2"
+
+  color        "ffffffff"
+
+  # fuel gauge location
+  texarea {
+    name       "fuelg"
+    x          77.0
+    y          22.0
+    w          121.0
+    h          9.0
+  }
+
+  # fuel gauge number
+  texarea {
+    name       "fueln"
+    x          209.0
+    y          14.0
+    w          37.0
+    h          26.0
+  }
+
+  # etemp gauge location
+  texarea {
+    name       "etempg"
+    x          77.0
+    y          74.0
+    w          121.0
+    h          8.0
+  }
+
+  # etemp gauge number
+  texarea {
+    name       "etempn"
+    x          209.0
+    y          66.0
+    w          37.0
+    h          26.0
+  }
+
+  # wtemp gauge location
+  texarea {
+    name       "wtempg"
+    x          77.0
+    y          127.0
+    w          121.0
+    h          8.0
+  }
+
+  # wtemp gauge number
+  texarea {
+    name       "wtempn"
+    x          209.0
+    y          120.0
+    w          37.0
+    h          26.0
+  }
+
+  # alloc gauge location
+  texarea {
+    name       "allocg"
+    x          40.0
+    y          183.0
+    w          121.0
+    h          9.0
+  }
+
+  # alloc gauge number
+  texarea {
+    name       "allocn"
+    x          209.0
+    y          170.0
+    w          37.0
+    h          25.0
+  }
+
+  # kills number
+  texarea {
+    name       "killsbox"
+    x          192.0
+    y          215.0
+    w          50.0
+    h          16.0
+  }
+}
+
+texture {
+  name         "shipK-dial"
+  filename     "TOS-kihd"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipK-dialp"
+  filename     "TOS-kihp"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipK-warp"
+  filename     "TOS-kwarp"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipK-warp2"
+  filename     "TOS-kwarp2"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipK-warp-col"
+  filename     ""  # we are only using this to store a color
+
+  color        "ffd72d00"
+}
+
+
+# Orion ships
+#
+#############
+
+texture {
+  name         "shipOSc"
+  filename     "TOSosc"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.3
+}
+
+texture {
+  name         "shipOSc-sh"
+  filename     "TOSosc-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+  mipmap       "yes"
+}
+
+texture {
+  name         "shipODe"
+  filename     "TOSode"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.3
+}
+
+texture {
+  name         "shipODe-sh"
+  filename     "TOSode-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+  mipmap       "yes"
+}
+
+texture {
+  name         "shipOCr"
+  filename     "TOSocr"
+
+  color        "ffffffff"
+  mipmap       "yes"
+  prescale     1.7
+}
+
+texture {
+  name         "shipOCr-sh"
+  filename     "TOSocr-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+  mipmap       "yes"
+}
+
+texture {
+  name         "shipO-phaser"
+  # guess we just use the default phaser
+  filename     "phaser"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipOSc-ico"
+  filename     "TOSosc"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipODe-ico"
+  filename     "TOSode"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipOCr-ico"
+  filename     "TOSocr"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipOSc-ico-sh"
+  filename     "TOS-oish_s"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipODe-ico-sh"
+  filename     "TOS-oish"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipOCr-ico-sh"
+  filename     "TOS-oish_c"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+# team's ico-torp texture
+texture {
+  name         "shipO-ico-torp"
+  filename     "torp"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipO-ico-decal1"
+  filename     "hud-decal1"
+
+  color        "ffffffff"
+
+  # shield gauge location
+  texarea {
+    name       "shieldg"
+    x          77.0
+    y          20.0
+    w          121.0
+    h          9.0
+  }
+
+  # shield charge gauge location
+  texarea {
+    name       "shchargeg"
+    x          77.0
+    y          50.0
+    w          121.0
+    h          2.0
+  }
+
+  # shield value (number) location
+  texarea {
+    name       "shieldn"
+    x          208.0
+    y          18.0
+    w          38.0
+    h          30.0
+  }
+
+  # damage gauge location
+  texarea {
+    name       "damageg"
+    x          77.0
+    y          221.0
+    w          121.0
+    h          9.0
+  }
+
+  # damage value (number) location
+  texarea {
+    name       "damagen"
+    x          208.0
+    y          215.0
+    w          38.0
+    h          30.0
+  }
+
+  # iconic ship location
+  texarea {
+    name       "icon"
+    x          72.0
+    y          66.0
+    w          124.0
+    h          124.0
+  }
+
+  ## "FA:%d" firing angle indicator position within "icon" area
+  texarea {
+    name       "icon-fangle"
+    x          7.0
+    y          56.0
+    w          40.0
+    h          10.0
+  }
+
+  ## "TA/D: %s:%d/%d" last Target, target Angle and target Distance
+  ##  indicator position within "icon" area
+  texarea {
+    name       "icon-tad"
+    x          60.0
+    y          56.0
+    w          132.0
+    h          10.0
+  }
+
+  # torp status
+  texarea {
+    name       "torps"
+    x          204.0
+    y          61.0
+    w          19.0
+    h          144.0
+  }
+
+  # phaser charge
+  texarea {
+    name       "phaserchrg"
+    x          234.0
+    y          61.0
+    w          10.0
+    h          144.0
+  }
+}
+
+# Alert lamps overlayed on decal1
+texture {
+  name         "shipO-ico-decal1-lamp-sh"
+  filename     "hud-decal1-lamp-sh"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipO-ico-decal1-lamp-hull"
+  filename     "hud-decal1-lamp-hull"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipO-ico-decal1-lamp-fuel"
+  filename     "hud-decal1-lamp-fuel"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipO-ico-decal1-lamp-eng"
+  filename     "hud-decal1-lamp-eng"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipO-ico-decal1-lamp-wep"
+  filename     "hud-decal1-lamp-wep"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipO-ico-decal1-lamp-rep"
+  filename     "hud-decal1-lamp-rep"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipO-ico-decal1-lamp-cloak"
+  filename     "hud-decal1-lamp-cloak"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipO-ico-decal1-lamp-tow"
+  filename     "hud-decal1-lamp-tow"
+
+  color        "ffffffff"
+  luminance    "yes"
+}
+
+texture {
+  name         "shipO-ico-decal2"
+  filename     "hud-decal2"
+
+  color        "ffffffff"
+
+  # fuel gauge location
+  texarea {
+    name       "fuelg"
+    x          77.0
+    y          22.0
+    w          121.0
+    h          9.0
+  }
+
+  # fuel gauge number
+  texarea {
+    name       "fueln"
+    x          209.0
+    y          14.0
+    w          37.0
+    h          26.0
+  }
+
+  # etemp gauge location
+  texarea {
+    name       "etempg"
+    x          77.0
+    y          74.0
+    w          121.0
+    h          8.0
+  }
+
+  # etemp gauge number
+  texarea {
+    name       "etempn"
+    x          209.0
+    y          66.0
+    w          37.0
+    h          26.0
+  }
+
+  # wtemp gauge location
+  texarea {
+    name       "wtempg"
+    x          77.0
+    y          127.0
+    w          121.0
+    h          8.0
+  }
+
+  # wtemp gauge number
+  texarea {
+    name       "wtempn"
+    x          209.0
+    y          120.0
+    w          37.0
+    h          26.0
+  }
+
+  # alloc gauge location
+  texarea {
+    name       "allocg"
+    x          40.0
+    y          183.0
+    w          121.0
+    h          9.0
+  }
+
+  # alloc gauge number
+  texarea {
+    name       "allocn"
+    x          209.0
+    y          170.0
+    w          37.0
+    h          25.0
+  }
+
+  # kills number
+  texarea {
+    name       "killsbox"
+    x          192.0
+    y          215.0
+    w          50.0
+    h          16.0
+  }
+}
+
+texture {
+  name         "shipO-dial"
+  filename     "TOS-oihd"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipO-dialp"
+  filename     "TOS-oihp"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipO-warp"
+  filename     "TOS-owarp"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipO-warp2"
+  filename     "TOS-owarp2"
+
+  color        "ffffffff"
+}
+
+texture {
+  name         "shipO-warp-col"
+  filename     ""  # we are only using this to store a color
+
+  color        "ff0f395a"
+}
+
+# Animations and animation definitions
+#
+######################################
+
+## animation defs
+#################
+
+# handles 'pulsing' of text, but could be used to pulse anything (red
+# that is :).
+animdef {
+  name         "pulse-normal"
+
+  istate {
+    color      "9fff0000"
+  }
+
+  # fade to black...
+  colanim {
+    stages     20
+    loops      1
+    delayms    50
+
+    deltaa     -0.015
+  }
+}
+
+animdef {
+  name         "pulse-slow"
+
+  istate {
+    color      "9fff0000"
+  }
+
+  # fade to black...
+  colanim {
+    stages     40
+    loops      1
+    delayms    50
+
+    deltaa     -0.01
+  }
+}
+
+# explode animdef
+animdef {
+  name         "explode"
+  texname      "exp"
+
+  # initial state
+  istate {
+    size       450         # in CU's
+  }
+
+  texanim {
+    stages     16
+    loops      1
+    delayms    100
+  }
+
+  # this runs when texanim has expired
+  colanim {
+    stages     10
+    loops      1
+    delayms    80
+
+    deltaa     -0.1
+    deltar     0.0
+    deltag     -0.001
+    deltab     -0.01
+  }
+
+  # this runs when texanim has expired
+  geoanim {
+    stages     10
+    loops      1
+    delayms    100
+
+    deltas     10.0        # in CU's
+  }
+}
+
+# explosion animation
+animation {
+  name         "explosion"
+  animdef      "explode"
+}
+
+# like explosion, but smaller/quicker
+animation {
+  name         "bombing"
+  animdef      "explode"
+
+  # use the 'explode' animdef by default, but overide certain
+  # aspects of it to make it smaller and faster than normal explosions.
+  animdef {
+
+    # initial state
+    istate {
+      size       100         # in CU's
+    }
+
+    texanim {
+      stages     16
+      loops      1
+      delayms    40
+    }
+
+    # fade to black after texanim finishes...
+    colanim {
+      stages     10
+      loops      1
+      delayms    20
+
+      deltaa     -0.1
+      deltar     0.0
+      deltag     -0.001
+      deltab     -0.01
+    }
+
+    # we don't want explode's geo anim, so disable it
+    geoanim {
+      stages     0
+    }
+  }
+}
+
+# blinker animations
+
+# one second
+animation {
+  name         "onesec"
+
+  animdef {
+    toganim {
+      delayms    1000
+    }
+  }
+}
+
+# half second
+animation {
+  name         "halfsec"
+
+  animdef {
+    toganim {
+      delayms    500
+    }
+  }
+}
+
+# quarter second
+animation {
+  name         "qtrsec"
+
+  animdef {
+    toganim {
+      delayms    250
+    }
+  }
+}
+
+# team torp animations
+
+# klingon
+animation {
+  name         "shipK-torp"
+
+  animdef {
+    texname    "shipK-torp"
+
+    # initial state
+    istate {
+      size       180         # in CU's
+    }
+
+    texanim {
+      stages     3
+      loops      0           # runs forever
+      delayms    50
+    }
+  }
+}
+
+# orion
+animation {
+  name         "shipO-torp"
+
+  animdef {
+    texname      "torp"
+
+    # initial state
+    istate {
+      size       110         # in CU's
+      angle      -1.0        # random
+      # need to specify color istate as we are not using a texanim, which
+      #  would normally contain one.
+      color      "e8e8e8f0"
+    }
+
+    geoanim {
+      stages     1           # always need at least 1 stage
+      loops      0           # runs forever
+      delayms    70          # randomly change angle every delayms
+    }
+  }
+}
+
+# federation
+animation {
+  name         "shipF-torp"
+
+  animdef {
+    texname    "shipF-torp"
+
+    # initial state
+    istate {
+      size       120         # in CU's
+    }
+
+    texanim {
+      stages     3
+      loops      0           # runs forever
+      delayms    100
+    }
+  }
+}
+
+# romulan
+animation {
+  name         "shipR-torp"
+
+  animdef {
+    texname    "shipR-torp"
+
+    # initial state
+    istate {
+      size       110         # in CU's
+    }
+
+    texanim {
+      stages     3
+      loops      0           # runs forever
+      delayms    100
+    }
+  }
+}
+
+# doomsday AP beam
+animation {
+  name         "doomsday-ap-fire"
+
+  # blink the doomsday's AP beam
+  animdef {
+    toganim {
+      delayms    2000
+    }
+  }
+}
+
+# a 'pulse' text effect for overloading wep/eng.
+animation {
+  name         "overload-pulse"
+  animdef      "pulse-normal"
+}
+
+# a 'pulse' text effect for critical wep/eng.
+animation {
+  name         "critical-pulse"
+  animdef      "pulse-slow"
+}
+
+# Negative Energy Barrier (neb)
+animation {
+  name         "neb"
+
+  animdef {
+    texname      "barrier"
+
+    # move texture along s axis, rapidly
+    texanim {
+      stages     1           # only one texture
+      loops      0           # runs forever
+      delayms    10
+
+      deltas     0.002       # S texture coord
+    }
+  }
+}

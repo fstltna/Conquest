@@ -1,0 +1,43 @@
+.TH "conqdriv" 6 "" ""
+.SH NAME
+conqdriv \- Drive a Conquest universe.
+.SH SYNOPSIS
+.PP
+\fBconqdriv\fP [\-f]
+.SH DESCRIPTION
+.PP
+\fBconqdriv\fP is a process that is automatically started and stopped
+by the conquest server \fBconquestd\fP as needed.  It is used to drive
+the universe, and should not be started by ordinary users.  Management
+of the \fBconqdriv\fP process is automatically handled by
+\fBconquestd\fP as needed.
+.PP
+When run with the \fB\-f\fP option, \fBconqdriv\fP will cause any
+currently running \fBconqdriv\fP process to terminate, and then take
+control of the universe directly.  This option is only of use to
+developers for debugging purposes.
+.SH "OPTIONS"
+.PP
+.TP 8
+.B \-G <subdir>
+Specify a game subdirectory.  See docs/server-guide.md for information
+on serving multiple games from a single conquest installation.
+.TP 8
+.B \-f
+Force any other \fBconqdriv\fP process to terminate, and assume direct
+control of the universe.
+.SH "AUTHOR"
+Jon Trulson
+.SH "SEE ALSO"
+.PP
+conquest(6), conquestd(6), conqoper(6), conqdriv(6), conqmetad(6) 
+.PP
+See conquest-guide.md in the conquest distribution (usually installed
+in <conquest install prefix>/share/doc/conquest/) for information and
+tips on how to play.
+.SH "COPYRIGHT"
+.PP
+Copyright (C)1994-2018 by Jon Trulson <jon@radscan.com> under the MIT
+License.
+
+

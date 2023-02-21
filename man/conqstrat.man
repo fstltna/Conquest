@@ -1,0 +1,48 @@
+.TH "CONQSTRAT" "6" 
+.SH "NAME" 
+conqstrat \(em modify Robot strategy tables 
+.SH "SYNOPSIS" 
+.PP 
+\fBconqstrat\fP [\fB-v\fP]  [\fB-d\fP]  [\fB-o \fIfile\fP\fP]  
+.SH "DESCRIPTION" 
+.PP 
+This manual page documents briefly the 
+\fBconqstrat\fP command. 
+.PP 
+\fBconqstrat\fP is a utility which reads rules from stdin to update
+Robot strategy tables.  It's normal use is to update the common block
+(the game's current 'state') with a 'compiled' robot AI state,
+defined by a file such as \fIconqrule\fP. 
+.PP
+If you want to modify the robot's AI, you can do so and use
+\fBconqstrat\fP to generate a conqdata.h file that can be compiled into
+Conquest and used as the default when the universe is initialized. 
+.SH "OPTIONS" 
+.IP "\fB-v\fP         " 10 
+Be verbose about everything. 
+.IP "\fB-d\fP         " 10 
+Turn on lots of debugging. 
+.IP "\fB-o \fP\fIfile\fP         " 10 
+Output to \fIfile\fP.  Without this 
+option, output will go to stdout.  The normal use of this option is to
+generate a header file that is compiled directly into conquest
+(\fIconqdata.h\fP). 
+.SH "SEE ALSO" 
+.PP 
+conquest (6), conqai (6), conqoper (6). 
+.PP 
+See the \fIconqrule\fP and \fIconqrule.easy\fP files for two robot
+strategies supplied in the conquest distribution, and installed in
+<install_prefix>/share/doc/conquest/.  \fIconqrule\fP is the original
+AI (with minor fixes) supplied in the original VAX/VMS conquest
+distribution.  It is also the default AI compiled into Conquest.
+\fIconqrule.easy\fP is an AI that is a bit easier on new players :)
+.SH "AUTHOR" 
+.PP 
+This manual page was originally written by Clint Adams
+<schizo@debian.org> for the \fBDebian\fP system (but may be used by
+others).  Permission is granted to copy, distribute and/or modify this
+document under the terms of the GNU GPL. Conquest is
+.PP
+Copyright (C)1994-2018 by Jon Trulson <jon@radscan.com> under the
+MIT License.

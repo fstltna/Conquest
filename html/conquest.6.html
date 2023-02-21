@@ -1,0 +1,616 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of conquest</TITLE>
+</HEAD><BODY>
+<H1>conquest</H1>
+Section: Games and Demos (6)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+conquest - Conquest game clients
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>conquest</B> is a Freeglut OpenGL based client that is used to
+connect to a conquest server to play.
+<P>
+
+<B>conquest</B> [OPTIONS]...
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Conquest is a multi-player, real-time space combat game.  It was
+originally written in RATFOR (Rational Fortran) for the VAX/VMS system
+in the mid 1980's and is a predecessor to Netrek.  It has been
+ported/rewritten to C/C++ for Unix systems, and uses a client/server
+model for Internet play.
+<P>
+
+The object of the game is twofold. The short-range goal is to
+accumulate &quot;kills&quot; by shooting down enemy players.  You get one kill
+point for each enemy ship shot down, plus some extra if the enemy had
+kills too. The major weapon used to shoot down ships is the photon
+torpedo.  Phasers are handy for close-in work, so don't neglect them.
+<P>
+
+The long-range goal is to conquer the universe for your team by taking
+every <I>core</I> planet. You take planets by killing off the enemy's armies via
+bombardment, and then beaming your team's armies down. When all the
+planets have been taken, the game ends, a new game begins, and the
+player who actually took the last planet gets his/her name up in
+lights.  <I>Core</I> planets are highlighted by a '+' sign in the
+planet list.
+<P>
+
+The first time <B>conquest</B> is run, a directory called ~/.conquest/
+will be created in your home directory.  This directory cantains
+your 'user options' data as well as the logfile.  Additionally,
+texturesrc (.trc), soundrc (.src), and texture image data (in
+~/.conquest/img/) can be stored there. See CONQINIT.TXT for more
+information on what <I>texturesrc</I>, <I>soundrc</I> and <I>texture
+image files</I> are.
+<P>
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<P>
+
+If the <I>-s</I> option is
+not specified, the client will connect to the metaserver to gt a list
+of servers you can connect to.
+<DL COMPACT>
+<DT><B>-B</B>
+
+<DD>
+Benchmark mode.  When this option is specified, and playback of a
+previously recorded game is specified with <I>-P</I>, then the default
+playback speed will be set to the highest speed possible (no frame
+delay). NOTE that most systems restrict screen refresh to 60Hz, so in
+reality, it may not really be &quot;as fast as possible&quot;.
+<P>
+It's not really much of a 'benckmark' yet as it does not currently
+emit any rendering statistics on exit.
+<DT><B>-f</B>
+
+<DD>
+Run in fullscreen mode.
+<DT><B>-g &lt;geometry&gt; </B>
+
+<DD>
+Specify initial window width/height.  OpenGL client only.  Format is
+WxH (ex: 1024x768). The default is currently 1280x720.
+<DT><B>-M &lt;metaserver&gt; </B>
+
+<DD>
+Specify an alternate metaserver.  The default is
+<I>conquest.radscan.com</I>. 
+<DT><B>-s &lt;server[:port]&gt; </B>
+
+<DD>
+Connect to server running on <I>server</I> port <I>port</I>.  The default
+port is 1701.
+<DT><B>-P &lt;record file&gt; </B>
+
+<DD>
+Play back a previously recorded game.
+<DT><B>-u</B>
+
+<DD>
+Disable UDP to/from the server and use TCP only.  The default is to
+try to negotiate UDP and use it for certain conquest protocol
+packets.  If you have problems with a server - for example, you
+always wind up stuck in the middle of Murisak when you enter the game,
+try disabling UDP with this option.
+<P>
+<DT><B>-S</B>
+
+<DD>
+Disable sound support.  If <B>conquest</B> was compiled with sound
+support, then this option will disable the playing of all music and
+effects.
+<P>
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>IMPORTANT COMMANDS</H2>
+
+<P>
+
+This section lists the basic commands of Conquest.  The next section
+lists the more advanced / obscure commands, and at the end of this
+document there is a summary list.  The list is also available in the game
+via the <B>h</B> command.
+<DL COMPACT>
+<DT><B>0-9,= </B>
+
+<DD>
+To set your warp factor, just type a digit, or <B>=</B> for your ship's
+maximum warp. The ships teams have different top speeds: 8 for Cruisers, 9
+for Destroyers, and 10 for Scouts.
+<DT><B>-,+</B>
+
+<DD>
+Use <B>+</B> to raise your energy shields, <B>-</B> to lower them.  Shields
+protect you from enemy weapons; however, it takes more fuel and heat
+to fly with them up.
+<DT><B>k </B>
+
+<DD>
+The <B>k</B> command is used to set your course.  You can specify your
+course a number of different ways: in degrees (0=east,90=north), via
+the arrow keys (see below), a ship number (precede it with an 's'), or
+a planet name.  If you set course for a planet, you have the option of
+locking on to it by terminating the line with a TAB instead of a
+carriage return - then you will orbit automatically when you get
+there.
+<DT><B>p,P </B>
+
+<DD>
+These two commands fire photon torpedoes.  Lower case <B>p</B> fires one at
+a time, and is less useful. Upper case <B>P</B> fires a burst of three.
+When you are in the heat of battle, you will want to fire every torp
+you have got (nine), so you will almost always use <B>P</B>. You can
+specify the direction to fire using either degrees or the arrow keys.
+<DT><B>*,d,D </B>
+
+<DD>
+Lower case <B>d</B> or <B>*</B> detonates near-by enemy torps before they get
+close enough to damage you.  Use this command *alot*.  Upper case <B>D</B>
+detonates your own torps, for instance in case you missed.  Since you
+can only have nine torps out at a time, this can be useful.
+<DT><B>f,F</B>
+
+<DD>
+These two commands let you fire phasers.  Lower case <B>f</B> is used to
+fire one phaser blast. It takes about one second to fire
+phasers. Upper case <B>F</B> fires phasers again in the same direction.
+<DT><B>B</B>
+
+<DD>
+To capture enemy planets, you first have to get rid of the enemy
+armies by bombarding them.  Orbit the planet, type <B>B</B>, confirm with a
+TAB, and then watch your damage closely. You will continue to bombard
+until you type another command.  When your damage gets up above 60 or
+70 percent, set a warp factor and get out fast.
+<P>
+You cannot bomb a planet down to less than 3 armies.  Once you have
+reduced a planet's army count to 3, you must beam down your own armies
+in order to kill the remaining armies and conquer the planet.
+<DT><B>R</B>
+
+<DD>
+After a bombing run, you can repair your damage three times faster by
+going into repair mode.  While repairing, your shields are down and
+you can't move or fire.  Repairing is useful any time you are damaged.
+If you are in orbit about a friendly planet when you repair, you will
+repair even faster.
+<DT><B>b</B>
+
+<DD>
+Once you have blasted a planet down to three armies, you can beam your
+own armies down to do hand-to-hand combat and replace them.
+<DT><B>m</B>
+
+<DD>
+Use the <B>m</B> command to send messages. You can send to single ships
+(using the ship number), entire teams, (first letter of team name) or
+everyone (&quot;all&quot;). You can even send messages to GOD, but don't expect
+an answer.  Messages to GOD will be seen be any conquest operators
+(CO's) who happen to be in the game.  
+<P>
+This command is useful for bothering the experts and asking them
+annoying questions.  It is also useful for trading insults.  If you
+type RETURN or TAB as the target of a message, the message will be
+sent to the last person(s) you sent a message to.
+<DT><B>i,TAB,RETURN</B>
+
+<DD>
+You can get information on planets and ships with the <B>i</B> command.
+Pressing RETURN will show you the last information you asked for.
+Pressing TAB will show you the 'next' last information you asked for.
+<DT><B>Q </B>
+
+<DD>
+The only way out besides getting killed is to self-destruct. There is
+a 15-second time delay because it is not honorable to quit in the heat
+of battle.  If the server has the <I>Vacant</I> flag enabled, then you
+can use the Control-Backslash key to quit immediately, leaving your
+ship intact.  If you decide to go <I>Vacant</I>, be careful where you
+leave your ship. :)
+<DT><B>/</B>
+
+<DD>
+To see which other people are currently playing Conquest, use the <B>/</B>
+command.
+<DT><B>h</B>
+
+<DD>
+This command gives you a short command summary (such as the one that
+is found at the end of this document).
+</DL>
+<A NAME="lbAG">&nbsp;</A>
+<H2>LESS IMPORTANT COMMANDS</H2>
+
+<P>
+
+<DL COMPACT>
+<DT><B>A</B>
+
+<DD>
+Type <B>A</B> to change your weapons/engines power allocations.  You can
+either enter a new weapons allocation percentage or else type TAB to
+toggle between the two extremes of 30/70 and 70/30. The power
+allocation controls things like how powerful your weapons are, how
+efficient your engines are, etc.
+<DT><B>C</B>
+
+<DD>
+Cloaking device. You can activate the cloaking device by typing <B>C</B>
+followed by a TAB.  While the cloaking device is in operation, you are
+invisible, even to your teammates. However, the cloaker uses a LOT of
+energy - so much that you can't use your weapons while it's on. A
+second <B>C</B> will turn it off again.
+<DT><B>E</B>
+
+<DD>
+Emergency distress signal. A quick way to let your team mates know
+that you are in trouble is by typing <B>E</B> followed by a TAB.  Every
+ship on your team (except those who are at war with your team) will
+get a short message from you that includes information about your
+fuel, shields, and ship damage.
+<DT><B>H</B>
+
+<DD>
+History. This command displays the list of recent Conquest players.
+<DT><B>O</B>
+
+<DD>
+Use this comment to enter the options menu.  From there you can
+configure various things like your settings and your macros.
+<DT><B>K</B>
+
+<DD>
+Attempt a coup. If all of your team's armies get killed, you may think
+you are in deep fecal matter.  Not so - you can still get some back by
+pulling a coup.  Try it.
+<DT><B>L</B>
+
+<DD>
+List Messages.  Type <B>L</B> to review old messages that have been
+sent to you.
+<DT><B>M</B>
+
+<DD>
+Type <B>M</B> to toggle your display between the short range and long range
+tactical displays.
+<P>
+When in the long range tactical display, you can use SPACE to toggle
+the center of the map beteen your ship and the Murisak (the sun at the
+center of the universe).
+<DT><B>N</B>
+
+<DD>
+Pseudonym.  Use this command to change your battle name.
+<DT><B>o</B>
+
+<DD>
+Orbit. Use <B>o</B> to come into orbit around a planet (or a sun, if you
+want a tan).  You cannot enter orbit if your speed exceeds warp 2.
+<DT><B>r</B>
+
+<DD>
+Refit.  If the server has enabled the <I>Refit</I> flag, and you have
+at least one kill, and you are orbiting a team owned planet, you can
+use this option to switch to a new ship type.  Valid types are Scout
+(great engines, weak weapons), Destroyer (good engines, good weapons),
+and Cruiser (weak engines, great weapons).
+<DT><B>S</B>
+
+<DD>
+Displays a list of secondary user statistics.
+<DT><B>t</B>
+
+<DD>
+Tractor beams.  You can use these to tow another ship, even if it is
+hostile.  This can be fun when you are cloaked :)
+<DT><B>T</B>
+
+<DD>
+Team list. Displays a list of team statistics, and information on when
+and who last conqered the universe.
+<DT><B>u</B>
+
+<DD>
+Untractor. Disengage your tractor beams if you are towing another ship
+or attempt to break free of another ships tractor beam if you are
+being towed.
+<DT><B>U</B>
+
+<DD>
+Displays a list of users and some primary statistics.
+<DT><B>W</B>
+
+<DD>
+Type <B>W</B> to change your war and peace settings.  Note that there is a
+10 second delay for declaring war on another team.  Also, if you do
+something nasty to another team such as bomb one of their planets,
+your war with that team becomes sticky and you may not declare peace
+with them until you get a new ship (by dying).
+<DT><B>?</B>
+
+<DD>
+To get a list of planets, use the <B>?</B> command.  Planets that must
+be taken in order to conquer the universe are marked with a <I>+</I> sign.
+<DT><B>^L</B>
+
+<DD>
+When you type <B>^L</B>, the screen is cleared and redrawn.
+</DL>
+<A NAME="lbAH">&nbsp;</A>
+<H2>DIRECTION KEYS</H2>
+
+<P>
+
+The easiest and quickest way to change direction is with the direction
+keys, keypad, or the mouse (middle button by default).  However, when
+using the keyboard to enter a direction, for example to fire phasers,
+or set course, you can use the letters &quot;qweadzxc&quot; on the left-hand
+side of your keyboard, called &quot;direction keys&quot; for historical
+reasons. The keys are assumed to be arranged as follows (if you have a
+Dvorak keyboard, you are in trouble):
+<P>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q&nbsp;W&nbsp;E
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\|/
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A--+--D
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/|\
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Z&nbsp;X&nbsp;C
+<P>
+You can use them singly, e.g. 'd'  would  be  0  degrees, 'q'
+would  be  135,  etc.  You  can  also  use  them  in
+combination: &quot;ed&quot; would be halfway between 'e'  and  'd',
+which  is  22.5  degrees; &quot;edd&quot; is like 'e' + 'd' + 'd' /
+3, or 15 degrees.
+<A NAME="lbAI">&nbsp;</A>
+<H2>DESTINATION SEARCHING</H2>
+
+<P>
+
+There are several special strings you can use when setting course or
+getting information:
+<DL COMPACT>
+<DT><B>ne</B>
+
+<DD>
+nearest enemy 
+<DT><B>ns</B>
+
+<DD>
+nearest ship
+<DT><B>nts</B>
+
+<DD>
+nearest (friendly) team ship
+<DT><B>np</B>
+
+<DD>
+nearest planet
+<DT><B>nep</B>
+
+<DD>
+nearest enemy planet
+<DT><B>nrp</B>
+
+<DD>
+nearest friendly (repair) planet
+<DT><B>nfp</B>
+
+<DD>
+nearest friendly class-M (fuel) planet
+<DT><B>nap</B>
+
+<DD>
+nearest planet with available armies (greater than 3 total armies)
+<DT><B>ntp</B>
+
+<DD>
+nearest planet owned by your team
+<DT><B>wp</B>
+
+<DD>
+weakest planet not owned by your team
+<DT><B>hp</B>
+
+<DD>
+home planet for your team
+<DT><B>sN or just N</B>
+
+<DD>
+ship N (where N is a integer number)
+</DL>
+<P>
+
+All of these can be abbreviated to their shortest unique string. Also,
+for the planets, you can type a number after the special string to
+specify an army threshold; that is, planets with less than that number
+of armies won't be considered.  For example, <B>na8</B> specifies the
+nearest planet with 8 (eight) or more armies, <B>nf14</B> is the nearest
+fuel planet with 14 or more armies, <B>nep1000</B> is the nearest
+non-scanned planet.
+<P>
+You can find info out about the second nearest object by terminating
+your information request with a TAB instead of a carriage return. For
+example, to find out about the second nearest planet type
+<B>inp&lt;TAB&gt;</B>. 
+<P>
+You can't use these when firing weapons - that would be too easy.
+<P>
+<A NAME="lbAJ">&nbsp;</A>
+<H2>MACROS</H2>
+
+<P>
+
+Macros are sequences of Conquest commands that are issued when a
+Function Key (Fkey) or mouse button is hit.  These are
+the F1-F12 keys and the Shifted F1-12 keys (F13-F24).
+<P>
+Support for assigning macros to mouse buttons is also provided.
+Modifiers like Alt, Control, and Shift can also be used with the mouse
+buttons.  Up to 32 buttons are supported with any combination of the 3
+modifiers (or no modifiers) giving you a maximum of 256 assignable
+mouse macros.  If you have a 32 button mouse that is :)
+<P>
+Mouse and Key macros are defined in your ~/.conquest/conquest.conf file.
+Users can edit their macro keys from within Conquest using the
+(O)ptions Menu.
+<P>
+Here is an example for the F1 function key
+<P>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;macro_f1=dP\r
+<P>
+Which makes my F1 key detonate enemy torps <B>d</B>, and fire a
+spread of 3 torps in the last direction I fired <B>P\r</B>.  
+<P>
+The mouse only works when playing the game (in the Cockpit) and the
+cursor is within the viewer window in the GL client.
+<P>
+Three default mouse macros are provided to give you a taste, and will
+be saved in your conquest.conf file the first time you run an 8.1.2f or
+better version of the client.  They are:
+<P>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mouse&nbsp;button&nbsp;0&nbsp;(left):&nbsp;Fire&nbsp;phaser&nbsp;at&nbsp;&lt;angle&gt;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mouse&nbsp;button&nbsp;1&nbsp;(middle):&nbsp;Set&nbsp;course&nbsp;to&nbsp;&lt;angle&gt;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mouse&nbsp;button&nbsp;2&nbsp;(right):&nbsp;Fire&nbsp;Torp&nbsp;at&nbsp;&lt;angle&gt;
+<P>
+Of course you can redefine these, as well as add others.  With mouse
+macros, a special character sequence, <B>\a</B> can be used to
+represent the angle of the cursor relative to the center of the viewer
+(your ship) when the button was pressed.
+<P>
+See the mouse macro comment block in your conquest.conf file for a
+description of the format.
+<P>
+There are many other interesting and useful combinations that I won't
+detail... After all, choosing the right macros and using them well is
+an important part of the strategy you employ against your opponents.
+<P>
+<P>
+<A NAME="lbAK">&nbsp;</A>
+<H2>COMMAND LIST</H2>
+
+<P>
+
+Here is a quick command reference.
+<P>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0-9,=&nbsp;&nbsp;set&nbsp;warp&nbsp;factor&nbsp;(=&nbsp;is&nbsp;10)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change&nbsp;w/e&nbsp;allocations
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beam&nbsp;armies
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bombard&nbsp;a&nbsp;planet
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cloaking&nbsp;device
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d,*&nbsp;&nbsp;&nbsp;&nbsp;detonate&nbsp;enemy&nbsp;torpedoes
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detonate&nbsp;your&nbsp;own&nbsp;torpedoes
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send&nbsp;emergency&nbsp;distress&nbsp;call
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fire&nbsp;phasers
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fire&nbsp;phasers,&nbsp;same&nbsp;direction
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;history
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;information
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;user&nbsp;options
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;course
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;K&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;a&nbsp;coup
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;review&nbsp;old&nbsp;messages
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send&nbsp;a&nbsp;message
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strategic&nbsp;map&nbsp;toggle
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change&nbsp;your&nbsp;name
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;come&nbsp;into&nbsp;orbit
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;launch&nbsp;photon&nbsp;torpedoes
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;launch&nbsp;photon&nbsp;torpedo&nbsp;burst
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initiate&nbsp;self-destruct
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;refit&nbsp;your&nbsp;ship
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enter&nbsp;repair&nbsp;mode
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;more&nbsp;user&nbsp;statistics
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;engage&nbsp;tractor&nbsp;beams
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;team&nbsp;list
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;un-engage&nbsp;tractor&nbsp;beams
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;statistics
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;war&nbsp;or&nbsp;peace
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lower&nbsp;shields
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;shields
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;player&nbsp;list
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;planet&nbsp;list
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;refresh&nbsp;the&nbsp;screen
+<P>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RETURN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get&nbsp;last&nbsp;(i)nfo.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(like&nbsp;'i&lt;RETURN&gt;')
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TAB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get&nbsp;'next'&nbsp;last&nbsp;info.&nbsp;&nbsp;&nbsp;(like&nbsp;'i&lt;TAB&gt;')
+<P>
+<P>
+<A NAME="lbAL">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Jon Trulson, Jeff Poskanzer (Original RATFOR VAX/VMS version)
+<A NAME="lbAM">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<A HREF="../conquest/conquestd.6.html">conquestd</A>(6), <A HREF="../conquest/conqoper.6.html">conqoper</A>(6), <A HREF="../conquest/conqdriv.6.html">conqdriv</A>(6), <A HREF="../conquest/conqmetad.6.html">conqmetad</A>(6), <A HREF="../conquest/conqinit.6.html">conqinit</A>(6)
+<P>
+
+See README in the conquest distribution (usually installed in
+&lt;conquest install prefix&gt;/share/doc/conquest/) for information and
+tips on how to play.
+<P>
+
+See INSTALL for instructions on unpacking, compiling, and installing
+conquest and other system specific issues.
+<P>
+
+See README.cygwin for information on building/using conquest on MS
+Windows systems. 
+<P>
+
+See HISTORY for the latest news and modification history.
+<P>
+
+See CONQINIT.TXT for information on CQI, and the format of the
+conqinitrc, soundrc and texturesrc files.
+<A NAME="lbAN">&nbsp;</A>
+<H2>COPYRIGHT</H2>
+
+<P>
+
+Copyright (C)1994-2018 by Jon Trulson &lt;<A HREF="mailto:jon@radscan.com">jon@radscan.com</A>&gt; under the
+MIT License.
+<P>
+
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">IMPORTANT COMMANDS</A><DD>
+<DT><A HREF="#lbAG">LESS IMPORTANT COMMANDS</A><DD>
+<DT><A HREF="#lbAH">DIRECTION KEYS</A><DD>
+<DT><A HREF="#lbAI">DESTINATION SEARCHING</A><DD>
+<DT><A HREF="#lbAJ">MACROS</A><DD>
+<DT><A HREF="#lbAK">COMMAND LIST</A><DD>
+<DT><A HREF="#lbAL">AUTHOR</A><DD>
+<DT><A HREF="#lbAM">SEE ALSO</A><DD>
+<DT><A HREF="#lbAN">COPYRIGHT</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 20:03:05 GMT, January 10, 2019
+</BODY>
+</HTML>

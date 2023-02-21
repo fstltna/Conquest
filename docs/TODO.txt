@@ -1,0 +1,76 @@
+
+- PROTOCOL
+
+  - ships
+
+    - look into 'dead reckoning' for client display of ship motion.
+
+    - look at some way of allowing triangulation of cloaked ships,
+      like in the pre client/se3rver days.  The trick is to be able to
+      do this without out making it possible to cheat by modifying the
+      client.
+
+    - add a Z component for the future?
+
+  - support downloading of textures from server?
+
+  - meta
+
+    - detect/highlight closed/private servers.  make 'dimmer' sorted
+      last? 
+
+
+- COMMON BLOCK
+
+  - ships
+
+    add a Z component for the future for objects (ships/planets/etc)?
+
+  - come up with some way to export/import CB data into a text file
+    for backup, exchange to other machines/architectures, and to
+    facilitate upgrading of an existing CB to a new one without
+    losing much (any?) data.  Maybe JSON format?
+
+
+- GENERAL
+
+  - local ship movement computation?  Big/trickey job. would require
+    protocol change.
+
+    - how to handle/sync orbiting, tow, etc...
+
+  - observer support?  Can see viewer view only (no hud).
+
+  - enable/disable client recording from within the game
+
+  - allow user to go to the meta list from within the game (without
+    restarting with the -m flag).
+
+    - maybe if conquest was run with '-m', then when the users quits
+      from the main menu, you go back to the meta list?  
+
+
+- IP restrictions?
+
+
+- OpenGL
+
+  - bigger messages area.
+
+  - indicate team war stat below icon?  Use 'team' icons?
+
+- Blue Sky
+
+  - different game types:
+
+    - classic (like it is now)
+
+    - deathmatch - free for all, or team.  
+
+    - Capture The Planet :)
+
+  - wormholes, moving, stationary, uni or bidirectional?  Implemented
+    as a special type of planet?
+
+
+

@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of CONQSTRAT</TITLE>
+</HEAD><BODY>
+<H1>CONQSTRAT</H1>
+Section: Games and Demos (6)<BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME </H2>
+
+conqstrat --- modify Robot strategy tables 
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS </H2>
+
+<P>
+
+<B>conqstrat</B> [<B>-v</B>]  [<B>-d</B>]  [<B>-o </B><I>file</I>]  
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION </H2>
+
+<P>
+
+This manual page documents briefly the 
+<B>conqstrat</B> command. 
+<P>
+
+<B>conqstrat</B> is a utility which reads rules from stdin to update
+Robot strategy tables.  It's normal use is to update the common block
+(the game's current 'state') with a 'compiled' robot AI state,
+defined by a file such as <I>conqrule</I>. 
+<P>
+
+If you want to modify the robot's AI, you can do so and use
+<B>conqstrat</B> to generate a conqdata.h file that can be compiled into
+Conquest and used as the default when the universe is initialized. 
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS </H2>
+
+<DL COMPACT>
+<DT><B>-v</B>         <DD>
+Be verbose about everything. 
+<DT><B>-d</B>         <DD>
+Turn on lots of debugging. 
+<DT><B>-o </B><I>file</I>         <DD>
+Output to <I>file</I>.  Without this 
+option, output will go to stdout.  The normal use of this option is to
+generate a header file that is compiled directly into conquest
+(<I>conqdata.h</I>). 
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO </H2>
+
+<P>
+
+conquest (6), conqai (6), conqoper (6). 
+<P>
+
+See the <I>conqrule</I> and <I>conqrule.easy</I> files for two robot
+strategies supplied in the conquest distribution, and installed in
+&lt;install_prefix&gt;/share/doc/conquest/.  <I>conqrule</I> is the original
+AI (with minor fixes) supplied in the original VAX/VMS conquest
+distribution.  It is also the default AI compiled into Conquest.
+<I>conqrule.easy</I> is an AI that is a bit easier on new players :)
+<A NAME="lbAG">&nbsp;</A>
+<H2>AUTHOR </H2>
+
+<P>
+
+This manual page was originally written by Clint Adams
+&lt;<A HREF="mailto:schizo@debian.org">schizo@debian.org</A>&gt; for the <B>Debian</B> system (but may be used by
+others).  Permission is granted to copy, distribute and/or modify this
+document under the terms of the GNU GPL. Conquest is
+<P>
+
+Copyright (C)1994-2018 by Jon Trulson &lt;<A HREF="mailto:jon@radscan.com">jon@radscan.com</A>&gt; under the
+MIT License.
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME </A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS </A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION </A><DD>
+<DT><A HREF="#lbAE">OPTIONS </A><DD>
+<DT><A HREF="#lbAF">SEE ALSO </A><DD>
+<DT><A HREF="#lbAG">AUTHOR </A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 20:03:05 GMT, January 10, 2019
+</BODY>
+</HTML>

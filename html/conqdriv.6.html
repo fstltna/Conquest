@@ -1,0 +1,96 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of conqdriv</TITLE>
+</HEAD><BODY>
+<H1>conqdriv</H1>
+Section: Games and Demos (6)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+conqdriv - Drive a Conquest universe.
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>conqdriv</B> [-f]
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+<B>conqdriv</B> is a process that is automatically started and stopped
+by the conquest server <B>conquestd</B> as needed.  It is used to drive
+the universe, and should not be started by ordinary users.  Management
+of the <B>conqdriv</B> process is automatically handled by
+<B>conquestd</B> as needed.
+<P>
+
+When run with the <B>-f</B> option, <B>conqdriv</B> will cause any
+currently running <B>conqdriv</B> process to terminate, and then take
+control of the universe directly.  This option is only of use to
+developers for debugging purposes.
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<P>
+
+<DL COMPACT>
+<DT><B>-G &lt;subdir&gt;</B>
+
+<DD>
+Specify a game subdirectory.  See docs/server-guide.md for information
+on serving multiple games from a single conquest installation.
+<DT><B>-f</B>
+
+<DD>
+Force any other <B>conqdriv</B> process to terminate, and assume direct
+control of the universe.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Jon Trulson
+<A NAME="lbAG">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<A HREF="../conquest/conquest.6.html">conquest</A>(6), <A HREF="../conquest/conquestd.6.html">conquestd</A>(6), <A HREF="../conquest/conqoper.6.html">conqoper</A>(6), <A HREF="../conquest/conqdriv.6.html">conqdriv</A>(6), <A HREF="../conquest/conqmetad.6.html">conqmetad</A>(6) 
+<P>
+
+See conquest-guide.md in the conquest distribution (usually installed
+in &lt;conquest install prefix&gt;/share/doc/conquest/) for information and
+tips on how to play.
+<A NAME="lbAH">&nbsp;</A>
+<H2>COPYRIGHT</H2>
+
+<P>
+
+Copyright (C)1994-2018 by Jon Trulson &lt;<A HREF="mailto:jon@radscan.com">jon@radscan.com</A>&gt; under the MIT
+License.
+<P>
+<P>
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">AUTHOR</A><DD>
+<DT><A HREF="#lbAG">SEE ALSO</A><DD>
+<DT><A HREF="#lbAH">COPYRIGHT</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 20:03:05 GMT, January 10, 2019
+</BODY>
+</HTML>

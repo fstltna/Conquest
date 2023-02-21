@@ -1,0 +1,12 @@
+[Unit]
+Description=Conquest MetaServer Daemon
+After=network-online.target
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/opt/bin/conqmetad -u nobody
+
+[Install]
+WantedBy=network-online.target
+

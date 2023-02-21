@@ -1,0 +1,84 @@
+.TH "conqinit" 6 "" ""
+.SH NAME
+conqinit \- a utility for the Conquest Init parser (CQI)
+.SH SYNOPSIS
+.PP
+\fBconqinit\fP [OPTIONS]
+.SH DESCRIPTION
+.PP
+\fBconqinit\fP can be used to test the parser, perform syntax checking
+on conqinitrc, soundrc, and texturesrc files.
+.PP
+CQI is a lex/yacc parser that is used by \fBConquest\fP 8.1.2a or
+later for configuration of the planets and other general purpose data,
+and for the specification of colors, textures, animation definitions,
+sound, and music.
+.PP
+If you are modifying one of the CQI config files, (conqinitrc,
+soundrc, etc), you should at least run conqinit on them to check for
+syntax or other validation errors.  If conquest (or conquestd) fails
+to properly load and parse these files they will fail to start.
+.SH "OPTIONS"
+.PP
+.TP 8
+.B \-G <subdir>
+Specify a game subdirectory.  See docs/server-guide.md for information
+on serving multiple games from a single conquest installation.
+.TP 8
+.B \-f <file>
+Read data from file <file>.
+.TP 8
+.B \-v 
+Increase verbosity.  Specifying this option multiple times will
+further increase the verbosity level.
+.TP 8
+.B \-s 
+Treat the input file as a file in soundrc format.  The default is
+to treat the file as if it were in conqinitrc format.
+.TP 8
+.B \-t 
+Treat the input file as a file in texturesrc format.  The default is
+to treat the file as if it were in conqinitrc format.
+.TP 8
+.B \-D
+Dump the current universe to stdout in conqinitrc format.
+.PP
+        This option is sort of a hack.  It loads the current state of
+        the universe on the local machine and generates a conqinitrc
+        format file on stdout.  This file can be saved and made the
+        default conqinitrc for a system.
+.PP
+        If you do this, you will almost certainly want to edit the
+        generated file and at least change the colors of the suns, and
+        the sun's randomized army counts.  Since this data is not
+        currently stored in the common block, conqinit tries to choose
+        reasonable defaults for them.  Make sure it actually did :)
+.PP
+        This capability is useful if you init the universe, then use
+        conqoper to edit and or create new planets and arrange them
+        just like you want them.  Then, using the above command, dump
+        the universe to a conqinitrc file, edit it if neccessary (to
+        clean up colors, etc).  
+.PP
+        Then copy that file to conqinitrc.local in the conquest
+        etc/conquest/ directory, (or email it to your friends :).
+        From then on, whenever the planets are initialized (due to a
+        successful conquer, or the actions of an oper in conqoper),
+        your definitions will be used as the default planet
+        configuration.
+
+.SH "AUTHOR"
+Jon Trulson
+.SH "SEE ALSO"
+.PP
+conquestd(6), conqoper(6), conqdriv(6), conqmetad(6) 
+.PP
+See the docs/conqinit.txt file in the src distribution (or on the conquest
+web page) for detailed information on the syntax of the files parsed
+by \fBconqinit\fP, as well as other information not mentioned here.
+.SH "COPYRIGHT"
+.PP
+Copyright (C)1994-2019 by Jon Trulson <jon@radscan.com> under the MIT
+License.
+
+
