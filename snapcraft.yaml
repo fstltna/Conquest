@@ -14,12 +14,12 @@ apps:
   conquest:
     command: bin/conquest
 parts:
-  impfe:
+  conquest:
     # See 'snapcraft plugins'
     plugin: dump
     source: .
-    build-packages: [libforms-bin, libforms-dev]
-    stage-packages: [libforms-bin, libforms-dev]
+    build-packages: [libsdl2-dev, libsdl2-mixer-dev, ncurses-dev, freeglut3-dev, libxi-dev, libxmu-dev]
+    stage-packages: [libsdl2-dev, libsdl2-mixer-dev, ncurses-dev, freeglut3-dev, libxi-dev, libxmu-dev]
     organize:
       conquest: bin/
       conquest.1: man/man1/
